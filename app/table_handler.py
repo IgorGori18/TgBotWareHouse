@@ -86,7 +86,7 @@ def rest_of_controllers():
             article, prod_name, total_balance = row
             if total_balance is None or total_balance == 0:
                 continue
-            result_string += f"{article}: {prod_name} {int(total_balance)} штук\n"
+            result_string += f"🔸 {article}: {prod_name} {int(total_balance)} штук\n"
 
         if result_string == "":
             return "Нет остатков контроллеров на складе"
@@ -132,7 +132,7 @@ def shipments(n):
             # Если количество отгрузок равно нулю или None, пропускаем запись
             if not total_shipment or total_shipment == 0:
                 continue
-            result_str += f"{product_name} {int(total_shipment)} штук {int(total_value)} рублей\n"
+            result_str += f"🔸 {product_name} {int(total_shipment)} штук {int(total_value)} рублей\n"
 
         if result_str == "":
             return "Нет отгрузок за данный период времени"
@@ -174,7 +174,7 @@ def delivery(n):
             product_name, total_receipt, total_value = row
             if not total_receipt or total_receipt == 0:
                 continue
-            result_str += f"{product_name} {int(total_receipt)} штук {int(total_value)} рублей\n"
+            result_str += f"🔸 {product_name} {int(total_receipt)} штук {int(total_value)} рублей\n"
 
         if result_str == "":
             return "Нет поступлений за данный период времени"

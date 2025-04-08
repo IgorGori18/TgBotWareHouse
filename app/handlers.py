@@ -110,7 +110,7 @@ async def thirty_days_delivery(message: Message, state: FSMContext):
 @router.message(F.text == "Остаток определенного товара")
 async def article_rest(message: Message, state: FSMContext):
     await state.set_state(ProductRest.article)
-    await message.answer("Напишите ID товара: ")
+    await message.answer("Напишите артикул товара: ")
 @router.message(ProductRest.article)
 async def article_name(message: Message, state: FSMContext):
     ans = rest_of_good(message.text)
